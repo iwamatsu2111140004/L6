@@ -1,0 +1,13 @@
+<h1>商品一覧</h1>
+<hr>
+<% @products.each do |pro| %>
+  <p>名前：<%= pro.name %></p>
+  <p>価格：<%= pro.price %>円</p>
+  <p>
+    <%= link_to '削除', product_path(pro), data: { turbo_method: :delete } %>
+    <%= link_to 'カートに追加', cart_item_path(pro), data: { turbo_method: :new } %>
+  </p>
+  <hr>
+<% end %>
+<%= link_to '商品を追加する', new_product_path %>
+<%= link_to 'カートを見る', cart_path %>

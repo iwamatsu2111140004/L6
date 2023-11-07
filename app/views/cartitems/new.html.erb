@@ -1,0 +1,8 @@
+<h1>追加画面</h1>
+<p>商品名称：<%= params[:product][:name] %></p>
+<p>商品価格：<%= params[:product][:price] %>円</p>
+<%= form_for @cartitem , url: {action: :create} do |f| %>
+    <%= f.label :qty, '数量:' %>
+    <%= f.text_field :qty %>
+    <%= f.submit '商品を登録する' %>
+<% end %>
