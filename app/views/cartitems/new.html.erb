@@ -1,6 +1,6 @@
 <h1>追加画面</h1>
-<p>商品名称：<%= params[:product][:name] %></p>
-<p>商品価格：<%= params[:product][:price] %>円</p>
+<p>商品名称：<%= Product.find_by(id: params[:cartitem][:product_id]).name %></p>
+<p>商品価格：<%= Product.find_by(id: params[:cartitem][:product_id]).price %>円</p>
 <%= form_for @cartitem , url: {action: :create} do |f| %>
     <%= f.label :qty, '数量:' %>
     <%= f.text_field :qty %>
