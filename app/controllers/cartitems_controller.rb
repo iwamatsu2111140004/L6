@@ -1,6 +1,6 @@
 class CartitemsController < ApplicationController
   def new
-    @cartitem = Cartitem.new
+    render 'new'
   end
 
   def create

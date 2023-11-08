@@ -5,9 +5,9 @@
   <p>価格：<%= pro.price %>円</p>
   <p>
     <%= link_to '削除', product_path(pro), data: { turbo_method: :delete } %>
-    <%= link_to 'カートに追加', cart_item_path(pro), data: { turbo_method: :new } %>
+    <%= link_to 'カートに追加', new_cart_item_path(pro) %>
   </p>
   <hr>
 <% end %>
 <%= link_to '商品を追加する', new_product_path %>
-<%= link_to 'カートを見る', cart_path %>
+<%= link_to 'カートを見る', cart_path(current_cart) %>
